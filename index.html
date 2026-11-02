@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-дайджест — нейросети без паники</title>
+  <meta name="description" content="10 коротких карточек для новичков: нейросети, Claude Code, промпты, первые проекты и типичные ошибки. Без воды и сложных слов.">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23131120'/%3E%3Ctext x='50' y='70' font-size='58' text-anchor='middle' fill='%23d9ff4f'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <!-- Живой градиентный фон -->
+  <div class="bg" aria-hidden="true">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <span class="blob blob--3"></span>
+    <span class="blob blob--4"></span>
+  </div>
+
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="AI-дайджест — на главную">
+        <span class="logo__mark" aria-hidden="true">✦</span>
+        <span class="logo__text">AI<span>/</span>дайджест</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Навигация по сайту">
+        <a href="#digest">Дайджест</a>
+        <button class="nav-link" type="button" data-random>Мне повезёт</button>
+      </nav>
+
+      <a class="btn btn--small" href="#digest">Смотреть карточки</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Обложка -->
+    <section class="hero container">
+      <div class="hero__copy">
+        <p class="eyebrow">
+          <span class="eyebrow__dot" aria-hidden="true"></span>
+          AI-дайджест для новичков
+        </p>
+
+        <h1>
+          Понять<br>
+          <span class="h1-gradient">нейросети</span><br>
+          за один <span class="h1-mark">кофе</span>
+        </h1>
+
+        <p class="hero__lead">
+          10 коротких карточек о том, как работают нейросети, что такое Claude Code,
+          как писать промпты и не наступать на одни и те же грабли.
+          Быстрее, чем очередь за латте.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#digest">
+            Начать с карточки №1
+            <span class="btn__arrow" aria-hidden="true">↓</span>
+          </a>
+          <button class="btn btn--ghost" type="button" data-random>
+            Мне повезёт
+            <span aria-hidden="true">✦</span>
+          </button>
+        </div>
+
+        <ul class="hero__facts">
+          <li><strong>{{ cards|length }}</strong><span>карточек</span></li>
+          <li><strong>5 мин</strong><span>на одну</span></li>
+          <li><strong>0</strong><span>опыта нужно</span></li>
+        </ul>
+      </div>
+
+      <!-- Декоративная «орбита» из CSS, без картинок -->
+      <div class="hero-art" aria-hidden="true">
+        <div class="ring ring--1"></div>
+        <div class="ring ring--2"></div>
+
+        <div class="orb">
+          <div class="orb__inner">
+            <span class="orb__big">AI</span>
+            <span class="orb__small">daily digest</span>
+          </div>
+        </div>
+
+        <span class="float float--1">🧠</span>
+        <span class="float float--2">⚡</span>
+        <span class="float float--3">✍️</span>
+        <span class="float float--4">🛠️</span>
+        <span class="sticker">0 опыта — норм</span>
+        <span class="spark spark--1">✦</span>
+        <span class="spark spark--2">✦</span>
+      </div>
+    </section>
+
+    <!-- Бегущая строка -->
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker">
+        <div class="ticker__group">
+          <span>промпты</span><span>✦</span>
+          <span>Claude Code</span><span>✦</span>
+          <span>первые проекты</span><span>✦</span>
+          <span>ошибки</span><span>✦</span>
+          <span>нейросети</span><span>✦</span>
+          <span>контекст</span><span>✦</span>
+          <span>Git</span><span>✦</span>
+          <span>приватность</span><span>✦</span>
+        </div>
+        <div class="ticker__group">
+          <span>промпты</span><span>✦</span>
+          <span>Claude Code</span><span>✦</span>
+          <span>первые проекты</span><span>✦</span>
+          <span>ошибки</span><span>✦</span>
+          <span>нейросети</span><span>✦</span>
+          <span>контекст</span><span>✦</span>
+          <span>Git</span><span>✦</span>
+          <span>приватность</span><span>✦</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Дайджест -->
+    <section class="digest container" id="digest">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow eyebrow--plain">
+            <span class="eyebrow__dot" aria-hidden="true"></span>
+            Дайджест
+          </p>
+          <h2>Выбирай, с чего начать</h2>
+        </div>
+        <p class="section-note">{{ cards|length }} карточек · только полезное</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+            <path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <label class="sr-only" for="search">Поиск по карточкам</label>
+          <input id="search" type="search" placeholder="Найти: Claude, промпты, ошибки…" autocomplete="off">
+          <button class="search__clear" id="clear-search" type="button" aria-label="Очистить поиск" hidden>×</button>
+          <kbd aria-hidden="true">/</kbd>
+        </div>
+
+        <div class="chips" role="group" aria-label="Фильтр по тегам">
+          <button class="chip is-active" type="button" data-tag="all" aria-pressed="true">
+            Все <span class="chip__count">{{ cards|length }}</span>
+          </button>
+          {% for tag in tags %}
+          <button class="chip" type="button" data-tag="{{ tag.name }}" aria-pressed="false">
+            {{ tag.name }} <span class="chip__count">{{ tag.count }}</span>
+          </button>
+          {% endfor %}
+        </div>
+
+        <div class="toolbar__meta">
+          <p id="result-count" aria-live="polite">Показано {{ cards|length }} из {{ cards|length }}</p>
+          <button class="text-button" id="reset-filters" type="button" data-reset hidden>Сбросить фильтры</button>
+        </div>
+      </div>
+
+      <noscript>
+        <p class="noscript">Для поиска и фильтров нужен JavaScript. Карточки и ссылки работают и без него.</p>
+      </noscript>
+
+      <div class="grid" id="cards-grid">
+        {% for card in cards %}
+        <article
+          class="card{% if card.featured %} card--featured{% endif %}"
+          data-tags="{{ card.tags|join('|') }}"
+          data-search="{{ (card.title ~ ' ' ~ card.description ~ ' ' ~ (card.tags|join(' ')))|lower }}"
+          style="--accent: {{ card.accent }}; --i: {{ loop.index0 }};"
+        >
+          <span class="card__num" aria-hidden="true">{{ "%02d"|format(loop.index) }}</span>
+
+          <div class="card__top">
+            <div class="card__tags">
+              {% for tag in card.tags %}
+              <span class="mini-tag">#{{ tag }}</span>
+              {% endfor %}
+            </div>
+            <span class="card__emoji" aria-hidden="true">{{ card.emoji }}</span>
+          </div>
+
+          {% if card.featured %}
+          <span class="card__badge">✦ старт здесь</span>
+          {% endif %}
+
+          <h3 class="card__title">{{ card.title }}</h3>
+          <p class="card__text">{{ card.description }}</p>
+
+          <div class="card__footer">
+            <span class="card__time">{{ card.minutes }} мин</span>
+            <a class="card__link" href="{{ card.link }}" target="_blank" rel="noopener noreferrer">
+              Открыть материал
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+
+      <div class="empty" id="empty-state" hidden>
+        <span class="empty__emoji" aria-hidden="true">🧭</span>
+        <h3>Ничего не нашлось</h3>
+        <p>Попробуй другой запрос или сбрось фильтры — в дайджесте точно есть что-то полезное.</p>
+        <button class="btn btn--primary" type="button" data-reset>Сбросить фильтры</button>
+      </div>
+    </section>
+
+    <!-- Финальный призыв -->
+    <section class="finale container" id="finale">
+      <div class="finale__card">
+        <span class="finale__star" aria-hidden="true">✦</span>
+
+        <div class="finale__content">
+          <p class="eyebrow eyebrow--dark">
+            <span class="eyebrow__dot" aria-hidden="true"></span>
+            Хватит читать про AI
+          </p>
+          <h2>Выбери одну карточку.<br>Потрать <em>5 минут</em>.</h2>
+          <p>Первый шаг не должен быть идеальным. Достаточно открыть материал и попробовать что-то маленькое.</p>
+        </div>
+
+        <button class="btn btn--lime" type="button" data-random>
+          Случайная карточка
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <a class="logo logo--footer" href="#top" aria-label="AI-дайджест — наверх">
+      <span class="logo__mark" aria-hidden="true">✦</span>
+      <span class="logo__text">AI<span>/</span>дайджест</span>
+    </a>
+    <p>Сделано для новичков. Без воды, регистрации и сложных слов.</p>
+    <a class="to-top" href="#top">Наверх ↑</a>
+  </footer>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>

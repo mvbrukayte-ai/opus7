@@ -1,0 +1,104 @@
+{
+  "cards": [
+    {
+      "title": "Что такое нейросеть на самом деле",
+      "description": "Как модель учится на примерах, почему ошибается и при чём тут вероятность. Объясняем базу без формул — после неё остальные карточки зайдут легко.",
+      "link": "https://huggingface.co/learn/llm-course/chapter1/1",
+      "tags": ["основы", "нейросети"],
+      "emoji": "🧠",
+      "accent": "#d9ff4f",
+      "minutes": 6,
+      "featured": true
+    },
+    {
+      "title": "Claude Code: первый запуск",
+      "description": "Ставим Claude Code, открываем папку с проектом и просим AI написать первую функцию. Пошагово, с командами и без магии.",
+      "link": "https://docs.claude.com/en/docs/claude-code/quickstart",
+      "tags": ["claude code", "инструменты"],
+      "emoji": "⚡",
+      "accent": "#ff5ea8",
+      "minutes": 7,
+      "featured": false
+    },
+    {
+      "title": "Промпт, который не хочется переделывать",
+      "description": "Роль, задача, контекст и формат ответа. Разбираем формулу промпта, которая экономит часы переписок с нейросетью.",
+      "link": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview",
+      "tags": ["промпты", "практика"],
+      "emoji": "✍️",
+      "accent": "#7ce8ff",
+      "minutes": 5,
+      "featured": false
+    },
+    {
+      "title": "Первый проект за один вечер",
+      "description": "Маленькая идея, минимум подготовки, рабочий результат за вечер. Три проекта, которые реально доделать новичку.",
+      "link": "https://www.anthropic.com/engineering/building-effective-agents",
+      "tags": ["проекты", "практика"],
+      "emoji": "🛠️",
+      "accent": "#ffa45c",
+      "minutes": 8,
+      "featured": false
+    },
+    {
+      "title": "Токены и контекст: почему AI забывает",
+      "description": "Почему длинный чат начинает «тупить», что такое контекстное окно и как уместить большую задачу в лимит токенов.",
+      "link": "https://docs.claude.com/en/docs/build-with-claude/context-windows",
+      "tags": ["основы", "нейросети"],
+      "emoji": "🔤",
+      "accent": "#b9a2ff",
+      "minutes": 5,
+      "featured": false
+    },
+    {
+      "title": "Галлюцинации: как ловить и проверять",
+      "description": "AI уверенно выдумывает факты. Учимся замечать красные флаги, просить источники и проверять ответы за полминуты.",
+      "link": "https://docs.claude.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations",
+      "tags": ["ошибки", "практика"],
+      "emoji": "🕵️",
+      "accent": "#ffe45e",
+      "minutes": 4,
+      "featured": false
+    },
+    {
+      "title": "5 ошибок новичка в AI",
+      "description": "Слишком большой запрос, слепая вера ответу, ноль контекста. Разбираем грабли, на которые наступают все новички.",
+      "link": "https://www.anthropic.com/engineering/claude-code-best-practices",
+      "tags": ["ошибки", "claude code"],
+      "emoji": "🚧",
+      "accent": "#ff7eb6",
+      "minutes": 6,
+      "featured": false
+    },
+    {
+      "title": "Git и GitHub без боли",
+      "description": "Коммиты, ветки и пул-реквесты простыми словами. Минимум команд, чтобы безопасно экспериментировать с AI-кодом.",
+      "link": "https://git-scm.com/book/ru/v2",
+      "tags": ["инструменты", "проекты"],
+      "emoji": "🐙",
+      "accent": "#8ff0c0",
+      "minutes": 7,
+      "featured": false
+    },
+    {
+      "title": "Бесплатные курсы: с чего начать",
+      "description": "Подборка бесплатных курсов и материалов, с которых стоит начать. Без оплаты, регистрации и «успешного успеха».",
+      "link": "https://www.coursera.org/learn/generative-ai-for-everyone",
+      "tags": ["практика", "инструменты"],
+      "emoji": "🎓",
+      "accent": "#a9c6ff",
+      "minutes": 5,
+      "featured": false
+    },
+    {
+      "title": "Приватность: что не отправлять AI",
+      "description": "Ключи, пароли, чужие переписки и данные клиентов. Простые правила цифровой гигиены при работе с AI.",
+      "link": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+      "tags": ["безопасность", "ошибки"],
+      "emoji": "🔐",
+      "accent": "#ffb3d1",
+      "minutes": 4,
+      "featured": false
+    }
+  ]
+}
